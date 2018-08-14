@@ -19,7 +19,7 @@ const Dashboard = props => {
   );
 };
 
-const mapStateToProps = (state) => ({ countries: state });
+const mapStateToProps = (state) => ({ categories: state });
 
 const mapDispatchToProps = (dispatch) => ({
   createCategory: category => dispatch(createCategory(category)),

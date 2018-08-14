@@ -6,7 +6,10 @@ class CategoryForm extends Component {
   constructor(props) {
     super(props);
     this.defaultState = {
-      name: '',
+        id: null,
+        timestamp: '',
+        name: '',
+        budget: 0,
     };
 
     const initialState = this.props.category || this.defaultState;

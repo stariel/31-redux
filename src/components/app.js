@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Dashboard from './components/dashboard';
+import Dashboard from './components/dashboard.js';
 import store from '../lib/store.js';
 
 class App extends Component {

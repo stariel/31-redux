@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createCategory, updateCategory, destroyCategory } from './reducer/category-reducer.js';
+import { createCategory, updateCategory, destroyCategory } from './action/category-action.js';
 import CategoryForm from './category-form.js';
 import CategoryItem from './category-item.js';
 

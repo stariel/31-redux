@@ -14,6 +14,7 @@ export default function reducer(state = defaultState, action) {
   switch (type) {
   case CATEGORY_CREATE:
     payload.id = uuid();
+    payload.timestamp = new Date().getTime();
   
     return [...state, payload];
   

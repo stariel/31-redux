@@ -55,7 +55,7 @@ CategoryForm.propTypes = {
 CategoryForm.defaultProps = {
   category: {
     id: null,
-    timestamp: new Date().getTime(),
+    timestamp: '',
     name: '',
     budget: 0,
   }

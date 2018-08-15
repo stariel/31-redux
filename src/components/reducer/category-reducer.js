@@ -1,9 +1,9 @@
 import uuid from 'uuid/v1';
 
 // Actions
-const CATEGORY_CREATE = 'Category/ADD';
-const CATEGORY_UPDATE = 'Category/UPDATE';
-const CATEGORY_DESTROY = 'Category/DELETE';
+export const CATEGORY_CREATE = 'Category/ADD';
+export const CATEGORY_UPDATE = 'Category/UPDATE';
+export const CATEGORY_DESTROY = 'Category/DELETE';
 
 const defaultState = [];
 

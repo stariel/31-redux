@@ -1,4 +1,4 @@
-import { createCategory, updateCategory } from '../src/components/action/category-action.js';
+import { createCategory, updateCategory, destroyCategory } from '../src/components/action/category-action.js';
 import reducer from '../src/components/reducer/category-reducer.js';
 import {CATEGORY_CREATE, CATEGORY_UPDATE, CATEGORY_DESTROY} from '../src/components/reducer/category-reducer.js';
 
@@ -27,6 +27,27 @@ describe('reducer', () => {
 
     expect(newState.length).toBe(1);
     expect(newState[0].budget).toBe(1560);
+
+  });
+
+  it('should delete a category', () => {
+    let category = {name: 'Rent', budget: 1500};
+    let addAction = createCategory(category);
+    let state = reducer(defaultState, addAction);
+
+    let category2 = {name: 'Food', budget: 200};
+    let addAction2 = createCategory(category2);
+    let newState = reducer(state, addAction2);
+
+    expect(newState.length).toBe(2);
+    expect(newState[1].budget).toBe(200);
+
+    let deleteCat = {id: newState[0].id, timestamp: newState[0].timestamp, name: newState[0].name, budget: newState[0].budget};
+    let updateAction = destroyCategory(deleteCat);
+    let delState = reducer(newState, updateAction);
+
+    expect(delState.length).toBe(1);
+    expect(delState[0].budget).toBe(200);
 
   });
 

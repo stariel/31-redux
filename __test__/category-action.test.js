@@ -1,4 +1,4 @@
-import { createCategory, updateCategory } from "../src/components/action/category-action.js";
+import { createCategory, updateCategory, destroyCategory } from "../src/components/action/category-action.js";
 
 describe ('actions', () => {
 
@@ -16,6 +16,14 @@ describe ('actions', () => {
     let action = updateCategory(category);
 
     expect(action.type).toBe('Category/UPDATE');
+    expect(action.payload).toEqual(category);
+  });
+
+  it('should create a destroy action', () => {
+    let category = {name: 'bye'};
+    let action = destroyCategory(category);
+
+    expect(action.type).toBe('Category/DELETE');
     expect(action.payload).toEqual(category);
   });
 

@@ -22,12 +22,11 @@ describe('reducer', () => {
     let state = reducer(defaultState, addAction);
 
     let updateCat = {id: state[0].id, timestamp: state[0].timestamp, name: state[0].name, budget: 1560};
-    console.log(updateCat);
     let updateAction = updateCategory(updateCat);
-    let newState = reducer({state, updateAction});
+    let newState = reducer(state, updateAction);
 
     expect(newState.length).toBe(1);
-    // expect(newState[0].budget).toBe(1560);
+    expect(newState[0].budget).toBe(1560);
 
   });
 
